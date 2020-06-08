@@ -1,22 +1,41 @@
+<?php error_reporting(0); ?>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html class="no-js" lang="en">
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SIMETRIS - RSKIA Rachmi Yogyakarta</title>
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <!-- Add custom CSS here -->
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <!-- Page Specific CSS -->
-    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
-    <script type="text/javascript" src="chartjs/Chart.js"></script>
+    <meta name="description" content="Sistem Informasi RSKIA Rachmi Yogyakarta">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="lite/images/favicon.ico">
+    <link rel="stylesheet" href="lite/vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lite/vendors/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="lite/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lite/assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://use.fontawesome.com/40a517b96a.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendors/sweetalert/sweetalert.css">
     <style>
-          /* Center the loader */
+    .blacktext {
+    color: #272727;
+    }
+    .bluetext {
+    color: #008cba;
+    }
+    .redtext {
+    color: #e71414;
+    }
+    .greentext {
+    color: #0c9463;
+    }
+    .navbar-rachmi{
+        background-color:#e67e22;
+        border-color:#d35400
+    }
+    .navbar-brand{
+        color:#ffffff;
+    }
+    /* Center the loader */
       #loader {
       position: absolute;
       left: 50%;
@@ -25,14 +44,15 @@
       width: 150px;
       height: 150px;
       margin: -75px 0 0 -75px;
-      border: 16px solid #f3f3f3;
+      border: 16px solid #dbdbdb;
       border-radius: 50%;
-      border-top: 16px solid #3498db;
+      border-top: 16px solid #ffffff;
       width: 120px;
       height: 120px;
       -webkit-animation: spin 0.5s linear infinite;
       animation: spin 0.5s linear infinite;
       }
+
       @-webkit-keyframes spin {
       0% { -webkit-transform: rotate(0deg); }
       100% { -webkit-transform: rotate(360deg); }
@@ -46,9 +66,9 @@
       .animate-bottom {
       position: relative;
       -webkit-animation-name: animatebottom;
-      -webkit-animation-duration: 1s;
+      -webkit-animation-duration: 5s;
       animation-name: animatebottom;
-      animation-duration: 1s
+      animation-duration: 5s
       }
       @-webkit-keyframes animatebottom {
       from { bottom:-100px; opacity:0 }
@@ -61,364 +81,26 @@
       #myDiv {
       display: none;
       }
-    </style>
-  </head>
-  <!-- Loading Page -->
+</style>
+</head>
 <body onload="myFunction()" style="margin:0;">
 <div id="loader"></div>
-<div style="display:none;" id="myDiv" class="animate-bottom">
-  <nav>
-    <div id="wrapper">
-        </div><!-- /.navbar-collapse -->
-      </nav>
-      <div id="page-wrapper">
-        <img class="img-responsive" src="images/header.jpg" width="100%" alt="Gambar Bootstrap 3"><br>
+<div style="display:none;" id="myDiv" class="animate-bottom"></div>
+    <div class="content mt-3">
+      <div class="animated fadeIn">
         <div class="row">
           <div class="col-lg-12">
-            <?php include "notifikasi1.php"?>
+            <center>
+              <font face="consolas"><h1 class="greentext">System is Connected!</h1><br>
+              <h4>Welcome to Information System of RSKIA Rachmi Yogyakarta</h4><br>
+              <h5>If you're seeing this page via a web browser, it means you've configuration has successfully. Congratulations!<br><br>This is the default home page. It can be found on the local filesystem at: /simetris/htdocs/arditriheru/index.html</h5><br>
+              <p class="blacktext">PHP Version 7.3.10<br>Apache 2.0 Handler</p></font>
+            </center>
           </div>
-        </div><!-- /.row -->
-  <div class="row">
-    <div class="col-lg-12">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="antrian/anak-filter">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Antrian A</h1>
-                    <p class="announcement-text">Antrian Poli Anak</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-           <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="antrian/kandungan-filter">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Antrian B</h1>
-                    <p class="announcement-text">Antrian Poli Kandungan</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="http://192.168.1.250:8080/bangsal">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Bangsal</h1>
-                    <p class="announcement-text">Modul Bangsal</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-      <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="booking">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Booking</h1>
-                    <p class="announcement-text">Modul Booking</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="ebook">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>E-Book</h1>
-                    <p class="announcement-text">Modul E-Book</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="http://192.168.1.250:8080/farmasi">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Farmasi</h1>
-                    <p class="announcement-text">Modul Farmasi</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-            </div>
-            <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="http://192.168.1.250:8080/sdi">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Hak Akses</h1>
-                    <p class="announcement-text">Modul Hak Akses</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="bangsal">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Info Kamar</h1>
-                    <p class="announcement-text">Modul Info Kamar</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="http://192.168.1.250:8080/kasir">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Kasir</h1>
-                    <p class="announcement-text">Modul Kasir</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="kuesioner">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Kepuasan</h1>
-                    <p class="announcement-text">Modul Kepuasan Pasien</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="http://192.168.1.250:8080/laboratorium">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Laboratorium</h1>
-                    <p class="announcement-text">Modul Laboratorium</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="manajemen">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Manajemen</h1>
-                    <p class="announcement-text">Modul Manajemen</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="https://bit.ly/2tCozeL">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>MedScape</h1>
-                    <p class="announcement-text">Modul Farmasi</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="https://bit.ly/2QpaMRM">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>MIMS</h1>
-                    <p class="announcement-text">Modul Farmasi</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="antrian/monitor-a">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Monitor 1</h1>
-                    <p class="announcement-text">Modul Antrian</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="http://192.168.1.250:8080/poliklinik">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Poliklinik</h1>
-                    <p class="announcement-text">Modul Poliklinik</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-      <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="http://192.168.1.250:8080/mr">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Rekam Medis</h1>
-                    <p class="announcement-text">Modul Rekam Medis</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="pendaftaran">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Reservasi</h1>
-                    <p class="announcement-text">Modul Reservasi Online</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="sdm">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>SDM</h1>
-                    <p class="announcement-text">Modul Sumber Daya Manusia</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="http://192.168.1.10:8080">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Sismadak</h1>
-                    <p class="announcement-text">Modul Sismadak</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="booking/covid-skrining">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Skrining 1</h1>
-                    <p class="announcement-text">Skrining COVID-19</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-4"><a href="surat">
-                    <i class="fa fa-arrow-circle-right fa-5x"></i>
-                  </div>
-                  <div class="col-xs-8 text-right">
-                    <h1>Surat Kerja</h1>
-                    <p class="announcement-text">Modul Administrasi Surat</p>
-                  </div></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div><br><?php include "copyright.php";?>
       </div>
-    <br><br><br><?php include "copyright.php";?>
-    </div><!-- /.row -->
-<br><br>
-      </div><!-- /#page-wrapper -->
-    </div><!-- /#wrapper -->
-    <!-- JavaScript -->
+    </div><!-- .content -->
+<!-- footer -->
     <script>
       // Loading Page
       var myVar;
@@ -430,14 +112,10 @@
       document.getElementById("myDiv").style.display = "block";
       }
     </script>
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <!-- Page Specific Plugins -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
-    <script src="js/morris/chart-data-morris.js"></script>
-    <script src="js/tablesorter/jquery.tablesorter.js"></script>
-    <script src="js/tablesorter/tables.js"></script>
-
-  </body>
+    <script src="lite/vendors/sweetalert/sweetalert.min.js"></script>
+    <script src="lite/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="lite/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lite/assets/js/main.js"></script>
+    <script src="lite/assets/js/dashboard.js"></script>
+</body>
 </html>
