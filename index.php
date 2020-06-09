@@ -91,7 +91,8 @@
         <div class="row">
           <div class="col-lg-12">
             <center>
-              <font face="consolas"><h1 class="greentext">System is Connected!</h1><br>
+              <img width="100px" src="images/gif.gif" alt="Rachmi Online">
+              <font face="consolas"><h1 class="bluetext">Server is Connected!</h1><br>
               <h4>Welcome to Information System of RSKIA Rachmi Yogyakarta</h4><br>
               <h5>If you're seeing this page via a web browser, it means you've configuration has successfully. Congratulations!<br><br>This is the default home page. It can be found on the local filesystem at: /simetris/htdocs/arditriheru/index.html</h5><br>
               <p class="blacktext">PHP Version 7.3.10<br>Apache 2.0 Handler</p></font>
